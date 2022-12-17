@@ -1,0 +1,391 @@
+<robot
+  name="es_description">
+  <link
+    name="sl_base">
+    <inertial>
+      <origin
+        xyz="1.7466E-06 -0.0036111 0.07368"
+        rpy="0 0 0" />
+      <mass
+        value="3.7768" />
+      <inertia
+        ixx="0.0010174"
+        ixy="4.8692E-07"
+        ixz="-2.6062E-07"
+        iyy="0.00056758"
+        iyz="0.00016413"
+        izz="0.00045354" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pcl_test2/urdf/meshes/sl_base.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.2 0.2 0.2 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pcl_test2/urdf/meshes/sl_base.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="sl_1">
+    <inertial>
+      <origin
+        xyz="-0.013237 -0.00054619 -0.014982"
+        rpy="0 0 0" />
+      <mass
+        value="1.7688" />
+      <inertia
+        ixx="0.0016473"
+        ixy="-1.3712E-05"
+        ixz="0.00016089"
+        iyy="0.0019378"
+        iyz="2.4347E-05"
+        izz="0.00036119" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pcl_test2/urdf/meshes/sl_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.2 0.2 0.2 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pcl_test2/urdf/meshes/sl_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ESJoint1"
+    type="revolute">
+    <origin
+      xyz="0 0 0.236"
+      rpy="0 0 3.1417" />
+    <parent
+      link="sl_base" />
+    <child
+      link="sl_1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-6.28"
+      upper="6.28"
+      effort="50"
+      velocity="5" />
+  </joint>
+  <link
+    name="sl_2">
+    <inertial>
+      <origin
+        xyz="0.015424 -9.646E-12 0.2125"
+        rpy="0 0 0" />
+      <mass
+        value="6.7544" />
+      <inertia
+        ixx="0.19271"
+        ixy="-1.9923E-12"
+        ixz="2.1848E-10"
+        iyy="0.19871"
+        iyz="0.00035188"
+        izz="0.0061413" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pcl_test2/urdf/meshes/sl_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.2 0.2 0.2 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pcl_test2/urdf/meshes/sl_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ESJoint2"
+    type="revolute">
+    <origin
+      xyz="-0.147 0 0"
+      rpy="1.57 1.2147E-16 4.8192E-33" />
+    <parent
+      link="sl_1" />
+    <child
+      link="sl_2" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-6.28"
+      upper="6.28"
+      effort="50"
+      velocity="5" />
+  </joint>
+  <link
+    name="sl_3">
+    <inertial>
+      <origin
+        xyz="-0.0091923 1.7292E-06 0.20596"
+        rpy="0 0 0" />
+      <mass
+        value="2.3481" />
+      <inertia
+        ixx="0.047889"
+        ixy="2.6294E-06"
+        ixz="-0.00099127"
+        iyy="0.04871"
+        iyz="4.612E-05"
+        izz="0.00084808" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pcl_test2/urdf/meshes/sl_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.2 0.2 0.2 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pcl_test2/urdf/meshes/sl_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ESJoint3"
+    type="revolute">
+    <origin
+      xyz="0.1375 0 0.425"
+      rpy="1.6918E-15 2.2204E-16 2.9582E-31" />
+    <parent
+      link="sl_2" />
+    <child
+      link="sl_3" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-6.28"
+      upper="6.28"
+      effort="50"
+      velocity="5" />
+  </joint>
+  <link
+    name="sl_4">
+    <inertial>
+      <origin
+        xyz="0.0036399 0.00019977 0.014282"
+        rpy="0 0 0" />
+      <mass
+        value="0.56883" />
+      <inertia
+        ixx="0.00061834"
+        ixy="2.969E-06"
+        ixz="3.2084E-05"
+        iyy="0.00064057"
+        iyz="1.6935E-06"
+        izz="4.0818E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pcl_test2/urdf/meshes/sl_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.2 0.2 0.2 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pcl_test2/urdf/meshes/sl_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ESJoint4"
+    type="revolute">
+    <origin
+      xyz="-0.101 0 0.395"
+      rpy="1.57 -5.388E-16 1.9374E-31" />
+    <parent
+      link="sl_3" />
+    <child
+      link="sl_4" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-6.28"
+      upper="6.28"
+      effort="50"
+      velocity="5" />
+  </joint>
+  <link
+    name="sl_5">
+    <inertial>
+      <origin
+        xyz="-0.014282 -0.00019977 -0.0036399"
+        rpy="0 0 0" />
+      <mass
+        value="0.56883" />
+      <inertia
+        ixx="4.0818E-05"
+        ixy="1.6935E-06"
+        ixz="3.2084E-05"
+        iyy="0.00064057"
+        iyz="2.969E-06"
+        izz="0.00061834" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pcl_test2/urdf/meshes/sl_5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.2 0.2 0.2 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pcl_test2/urdf/meshes/sl_5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ESJoint5"
+    type="revolute">
+    <origin
+      xyz="0 0 0.101"
+      rpy="0 0 3.1417" />
+    <parent
+      link="sl_4" />
+    <child
+      link="sl_5" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-6.28"
+      upper="6.28"
+      effort="50"
+      velocity="5" />
+  </joint>
+  <link
+    name="sl_6">
+    <inertial>
+      <origin
+        xyz="-0.064015 7.6673E-07 -0.00019082"
+        rpy="0 0 0" />
+      <mass
+        value="0.17537" />
+      <inertia
+        ixx="1.3436E-06"
+        ixy="1.5557E-11"
+        ixz="-3.8717E-09"
+        iyy="9.8324E-07"
+        iyz="1.9341E-13"
+        izz="9.8319E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pcl_test2/urdf/meshes/sl_6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.2 0.2 0.2 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pcl_test2/urdf/meshes/sl_6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ESJoint6"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="sl_5" />
+    <child
+      link="sl_6" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-6.28"
+      upper="6.28"
+      effort="50"
+      velocity="5" />
+  </joint>
+</robot>

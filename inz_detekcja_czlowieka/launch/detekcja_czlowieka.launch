@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<launch>
+    <!-- Plik launch do detekcji człowieka (znalzienie URDF robota, uruchomienie głównego programu, uruchomienie RViza z zapisaną konfiguracją)-->
+    <param name="robot_description" textfile="$(find inz_detekcja_czlowieka)/urdf/urdf/es5_description.urdf" />
+	<node pkg="inz_detekcja_czlowieka" type="people_detection" name="people_detection" output="screen" />
+    <node type="rviz" name="rviz" pkg="rviz" args="-d $(find inz_detekcja_czlowieka)/rviz/rviz_config.rviz" />
+ </launch>

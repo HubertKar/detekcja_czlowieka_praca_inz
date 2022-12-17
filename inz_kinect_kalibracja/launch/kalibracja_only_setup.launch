@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<launch>
+	<!-- Ustawienia dla progrmau śledzącego znacziki referencyjne -->
+	<arg name="cam_image_topic" default="/kinect2/hd/image_color" />
+	<arg name="cam_info_topic" default="/kinect2/hd/camera_info" />
+	<node name="ar_track_alvar" pkg="ar_track_alvar" type="individualMarkersNoKinect" respawn="false" output="screen">
+		<rosparam command="load" file="$(find inz_kinect_kalibracja)/config/artag.yaml" />
+
+		<remap from="camera_image"  to="$(arg cam_image_topic)" />
+		<remap from="camera_info"   to="$(arg cam_info_topic)" />
+	</node>
+
+	<!-- Program do pobiernaia danych z kiencta-->
+	<node pkg="kinect_grabber" name="kinect_grabber" type="kinect_grabber" output="screen" />
+	<!-- Program przygotowujący do kalibracji-->
+	<node pkg="inz_kinect_kalibracja" name="get_tcp_tf" type="get_tcp_tf" output="screen" />
+	<!-- Rviz z plikiem konfigurayjnym-->
+	<node type="rviz" name="rviz" pkg="rviz" args="-d $(find inz_kinect_kalibracja)/rviz/rviz_config.rviz" />
+</launch>
